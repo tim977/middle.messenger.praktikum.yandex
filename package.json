@@ -21,5 +21,9 @@
   "homepage": "https://github.com/tim977/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "engines": {
+    "node": ">=14.15.3",
+    "npm": ">=6.14.9"
   }
 }
