@@ -1,0 +1,100 @@
+@mixin font_normal {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+}
+
+$color: #3369F3;
+
+.login-page {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.form-authorization {
+    $width: 340px;
+    $height: 450px;
+
+    position: absolute;
+    width: $width;
+    height: $height;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: calc(50% - 225px);
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+
+    &__head {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 145px;
+        top: 50px;
+
+        @include font_normal;
+        font-size: 20px;
+        line-height: 20px;
+
+        text-align: center;
+
+        color: #1E1E1E;
+    }
+    &__loginInput,
+    &__passInput,
+    &__button,
+    &__reg {
+        cursor: pointer;
+    }
+    &__loginInput,
+    &__passInput {
+        position: absolute;
+        width: 280px;
+        @include font_normal;
+        font-size: 13px;
+        line-height: 13px;
+        border: none;
+        border-bottom: 1px solid  $color;
+        padding-bottom: 7px;
+        left: 30px;
+        outline: none;
+    }
+    &__loginInput {
+        top: 147px;
+    }
+    &__passInput {
+        top: 199px;
+    }
+    &__button {
+        position: absolute;
+        width: 280px;
+        height: 37px;
+        background: $color;
+        border-radius: 8px;
+        @include font_normal;
+        font-size: 13px;
+        text-align: center;
+        color: #FFFFFF;
+        padding-top: 10px;
+        left: 30px;
+        top: 368px;
+    }
+    &__reg {
+        @include font_normal;
+        position: absolute;
+        color: $color;
+        font-size: 11px;
+        line-height: 11px;
+        left: 131px;
+        bottom: 30px;
+    }
+    &__button:hover {
+        background-color: darken($color, 20%);
+    }
+    &__reg:hover {
+        color: darken($color, 30%);
+    }
+}
