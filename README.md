@@ -2,7 +2,7 @@
 ### Также не забудьте проверить, что репозиторий публичный.
 ### Добавьте ниже ссылку на открытый pull request.
 
-https://github.com/tim977/middle.messenger.praktikum.yandex/pull/1/checks
+https://github.com/tim977/middle.messenger.praktikum.yandex/pull/3
 
 
 
