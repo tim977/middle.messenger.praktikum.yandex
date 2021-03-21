@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel ./static/index.html",
-    "build": "parcel build ./static/index.html",
+    "build": "parcel build ./static/index.html --public-url ./",
     "start": "node ./app/app.js",
     "startP": "parcel ./static/index.html"
   },
@@ -29,5 +29,6 @@
   "engines": {
     "node": ">=14.15.3",
     "npm": ">=6.14.9"
-  }
+  },
+  "dependencies": {}
 }
