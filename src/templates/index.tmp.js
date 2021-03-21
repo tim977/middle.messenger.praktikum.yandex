@@ -6,7 +6,9 @@ let tml = `<div class="form-authorization">
                     <span>Авторизоваться</span>
                 </div>
                 <div class="form-authorization__reg">
-                    <span>Нет аккаунта?</span>
+                    <a href="./registration.html">
+                        <span>Нет аккаунта?</span>
+                    </a>
                 </div>
             </div>`;
 

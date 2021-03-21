@@ -4,9 +4,9 @@
     font-weight: 500;
 }
 
-@mixin form-authorization {
+@mixin form-registration {
     $width: 340px;
-    $height: 450px;
+    $height: 615px;
 
     position: absolute;
     width: $width;
@@ -14,7 +14,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: calc(50% - 225px);
+    top: calc(50% - 307px);
 
     background: #FFFFFF;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
@@ -29,15 +29,15 @@ $color: #3369F3;
     margin: 0 auto;
 }
 
-.form-authorization {
-
-    @include form-authorization;
+.form-registration {
+    
+    @include form-registration;
 
     &__head {
         position: absolute;
         width: 50px;
         height: 50px;
-        left: 145px;
+        left: 106px;
         top: 50px;
 
         @include font_normal;
@@ -51,11 +51,16 @@ $color: #3369F3;
     &__loginInput,
     &__passInput,
     &__button,
-    &__reg {
+    &__input {
         cursor: pointer;
     }
+    &__emailInput,
     &__loginInput,
-    &__passInput {
+    &__firstNameInput,
+    &__lastNameInput,
+    &__phoneInput,
+    &__passCheckInput,
+    &__passCheck2Input {
         position: absolute;
         width: 280px;
         @include font_normal;
@@ -67,11 +72,26 @@ $color: #3369F3;
         left: 30px;
         outline: none;
     }
-    &__loginInput {
-        top: 147px;
+    &__emailInput {
+        top: 147px;;
     }
-    &__passInput {
+    &__loginInput {
         top: 199px;
+    }
+    &__firstNameInput {
+        top: 251px;
+    }
+    &__lastNameInput {
+        top: 304px;
+    }
+    &__phoneInput {
+        top: 356px;
+    }
+    &__passCheckInput {
+        top: 409px;
+    }
+    &__passCheck2Input {
+        top: 461px;
     }
     &__button {
         position: absolute;
@@ -85,21 +105,21 @@ $color: #3369F3;
         color: #FFFFFF;
         padding-top: 10px;
         left: 30px;
-        top: 368px;
+        top: 523px;
     }
-    &__reg {
+    &__input {
         @include font_normal;
         position: absolute;
         color: $color;
         font-size: 11px;
         line-height: 11px;
-        left: 131px;
+        left: 154px;
         bottom: 25px;
     }
     &__button:hover {
         background-color: darken($color, 20%);
     }
-    &__reg:hover {
+    &__input:hover {
         color: darken($color, 30%);
     }
 }

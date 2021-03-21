@@ -1,4 +1,4 @@
-import tml from './templates/index.tmp'
+import tml from '../templates/index.tmp'
 const loginPage = document.getElementsByClassName('login-page')[0];
 
 const objData = {
