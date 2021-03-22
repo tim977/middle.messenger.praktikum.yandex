@@ -1,7 +1,7 @@
 const tml = `<div>
                 <div class="chatListWrapper">
                 <div class="chatListWrapper__profileLink">
-                    <a href="">Профиль</a>
+                    <a href="./profile.html">Профиль</a>
                 </div>
                 <input type="text" class="chatListWrapper__search" placeholder="Поиск">
                 <div class="chatConrainer"></div>

@@ -30,6 +30,8 @@ $coloSearch: #f1f1f1;
     }
     &__profileLink > a {
         text-decoration: none;
+        color: #999999;
+        cursor: pointer;
     }
     &__search {
         position: absolute;
@@ -42,7 +44,6 @@ $coloSearch: #f1f1f1;
         border: none;
         text-align: center;
         outline: none;
-        // padding-bottom: 14px;
 
         @include font_normal;
         font-size: 12px;
