@@ -7,5 +7,5 @@ https://github.com/tim977/middle.messenger.praktikum.yandex/pull/3
 Не верстал очень давно, учился заново.
 
 Запуск сборки в режиме разработки: npm run dev;
-Запуск сборки в режиме сборки: npm run build;
+Запуск сборки: npm run build;
 Запуск сервера раздающего статику: npm run start;

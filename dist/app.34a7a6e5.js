@@ -120,10 +120,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"../src/templates/index.tmp.js":[function(require,module,exports) {
 var tml = "<div class=\"form-authorization\">\n                <div class=\"form-authorization__head\">{{input}}</div>\n                <input type=\"text\" placeholder=\"\u041B\u043E\u0433\u0438\u043D\" class=\"form-authorization__loginInput\">\n                <input type=\"password\" placeholder=\"\u041F\u0430\u0440\u043E\u043B\u044C\" class=\"form-authorization__passInput\">\n                <div class=\"form-authorization__button\">\n                    <span>\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F</span>\n                </div>\n                <div class=\"form-authorization__reg\">\n                    <a href=\"./registration.html\">\n                        <span>\u041D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430?</span>\n                    </a>\n                </div>\n            </div>";
 module.exports = tml;
+},{}],"../src/utils/getHtmlFromTml.js":[function(require,module,exports) {
+/**
+ * Принимает шаблон разметки и данные для его заполнения
+ * 
+ * @param {string} temp - шаблон html в виде строки
+ * @param {object} objData - объект с данными
+ * @returns html разметка
+ */
+function getHtmlFromTml(temp) {
+  var objData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;
+  var template = Handlebars.compile(temp);
+  var html = template(objData);
+  var content = new DOMParser().parseFromString(html, "text/html").body.childNodes[0];
+  return content;
+}
+
+module.exports = getHtmlFromTml;
 },{}],"../src/app/index.js":[function(require,module,exports) {
 "use strict";
 
 var _index = _interopRequireDefault(require("../templates/index.tmp"));
+
+var _getHtmlFromTml = _interopRequireDefault(require("../utils/getHtmlFromTml"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -133,11 +152,8 @@ var objData = {
   authorization: 'Авторизоваться',
   noAccount: 'Нет аккаунта?'
 };
-var template = Handlebars.compile(_index.default);
-var html = template(objData);
-var content = new DOMParser().parseFromString(html, "text/html").body.childNodes[0];
-loginPage.appendChild(content);
-},{"../templates/index.tmp":"../src/templates/index.tmp.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+loginPage.appendChild((0, _getHtmlFromTml.default)(_index.default, objData));
+},{"../templates/index.tmp":"../src/templates/index.tmp.js","../utils/getHtmlFromTml":"../src/utils/getHtmlFromTml.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -165,7 +181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51792" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58664" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

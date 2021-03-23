@@ -127,6 +127,18 @@ var _registration = _interopRequireDefault(require("../templates/registration.tm
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var prefixClass = 'form-registration';
 var formRegistration = document.getElementsByClassName('page-registration')[0];
 var objData = {
@@ -137,19 +149,16 @@ var html = template(objData);
 var content = new DOMParser().parseFromString(html, "text/html").body.childNodes[0];
 formRegistration.appendChild(content);
 var registrationButton = document.getElementsByClassName("".concat(prefixClass, "__button"))[0];
-var loginInput = document.getElementsByClassName("".concat(prefixClass, "__loginInput"))[0];
-var firstNameInput = document.getElementsByClassName("".concat(prefixClass, "__firstNameInput"))[0];
-var lastNameInput = document.getElementsByClassName("".concat(prefixClass, "__lastNameInput"))[0];
-var phoneInput = document.getElementsByClassName("".concat(prefixClass, "__phoneInput"))[0];
-var passCheckInput = document.getElementsByClassName("".concat(prefixClass, "__passCheckInput"))[0];
-var passCheck2Input = document.getElementsByClassName("".concat(prefixClass, "__passCheck2Input"))[0];
-var arrInput = [loginInput, firstNameInput, lastNameInput, phoneInput, passCheckInput, passCheck2Input];
-var arrInputStr = ['loginInput', 'firstNameInput', 'lastNameInput', 'phoneInput', 'passCheckInput', 'passCheck2Input'];
+var inputContainer = document.getElementsByClassName('form-registration')[0];
+var inputAll = inputContainer.querySelectorAll('input');
+var regExp = /__(\w+)/;
 var dataObj = {};
 registrationButton.addEventListener('click', function () {
-  arrInput.forEach(function (el, i) {
-    dataObj[arrInputStr[i]] = el.value;
+  _toConsumableArray(inputAll).forEach(function (el) {
+    var classNameNbrStart = regExp.exec(el.className)[1];
+    dataObj[classNameNbrStart] = el.value;
   });
+
   var sObj = JSON.stringify(dataObj, null, 2);
   localStorage.setItem('authorizationData', sObj);
   console.log(dataObj);
@@ -182,7 +191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51792" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58664" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

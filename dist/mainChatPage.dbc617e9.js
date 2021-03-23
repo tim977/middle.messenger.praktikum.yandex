@@ -190,7 +190,6 @@ var chatConrainer = document.getElementsByClassName('chatConrainer')[0];
 dataChats.forEach(function (obj) {
   chatConrainer.appendChild((0, _getHtmlFromTml.default)(tempChat, obj));
 });
-console.log(chatConrainer);
 },{"../templates/mainChatPage.tmp":"../src/templates/mainChatPage.tmp.js","../utils/getTime":"../src/utils/getTime.js","../utils/getRandomNumber":"../src/utils/getRandomNumber.js","../utils/getHtmlFromTml":"../src/utils/getHtmlFromTml.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -219,7 +218,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51792" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58664" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

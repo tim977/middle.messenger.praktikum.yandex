@@ -1,4 +1,4 @@
-let tml = `<div class="form-authorization">
+const tml = `<div class="form-authorization">
                 <div class="form-authorization__head">{{input}}</div>
                 <input type="text" placeholder="Логин" class="form-authorization__loginInput">
                 <input type="password" placeholder="Пароль" class="form-authorization__passInput">

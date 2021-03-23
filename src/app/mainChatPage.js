@@ -5,7 +5,7 @@ import getHtmlFromTml from '../utils/getHtmlFromTml';
 
 const mainChatPage = document.getElementsByClassName('chatMainPage')[0];
 
-let dataChats = [
+const dataChats = [
     {
         nameInterlocutor: 'Dima',
         lastMessage: 'Привет',
@@ -37,5 +37,3 @@ const chatConrainer = document.getElementsByClassName('chatConrainer')[0];
 dataChats.forEach(obj => {
     chatConrainer.appendChild(getHtmlFromTml(tempChat, obj));
 })
-console.log(chatConrainer);
-
