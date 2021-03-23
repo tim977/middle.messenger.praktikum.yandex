@@ -1,4 +1,5 @@
 import tml from '../templates/index.tmp'
+import getHtmlFromTml from '../utils/getHtmlFromTml';
 const loginPage = document.getElementsByClassName('login-page')[0];
 
 const objData = {
@@ -7,7 +8,4 @@ const objData = {
     noAccount: 'Нет аккаунта?'
 }
 
-let template = Handlebars.compile(tml);
-let html = template(objData);
-let content = new DOMParser().parseFromString(html, "text/html").body.childNodes[0];
-loginPage.appendChild(content);
+loginPage.appendChild(getHtmlFromTml(tml, objData));
