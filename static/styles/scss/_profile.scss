@@ -1,0 +1,106 @@
+@mixin font_normal {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@mixin form-profile {
+    $width: 1024px;
+    $height: 720px;
+
+    position: absolute;
+    width: $width;
+    height: $height;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: calc(50% - 360px);
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+}
+
+.form-profile {
+    @include form-profile;
+}
+
+.conteinerData {
+    position: absolute;
+    left: 16%;
+    top: 30%;
+    width: 70%;
+    @include font_normal;
+}
+
+.conteinerData {
+    &__logo {
+        position: relative;
+        text-align: center;
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        left: 293px;
+        top: -135px;
+        background-color: grey;
+    }
+    &__head {
+        position: relative;
+        @include font_normal;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        top: -54px;
+    }
+
+    &__email,
+    &__login,
+    &__firstName,
+    &__lastName,
+    &__nameInChat,
+    &__phone {
+        margin-bottom: 5px;
+        border-bottom: 1px solid #999999;
+    }
+
+    &__changeData {
+        margin-top: 50px;
+        color: #999999;
+    }
+
+    &__changeData,
+    &__changePass,
+    &__goOut {
+        border-bottom: 1px solid #999999;
+        font-size: 13px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    &__changeData > a,
+    &__changePass > a,
+    &__goOut > a {
+        text-decoration: none;
+        color: black;
+    }
+
+    &__changeData > a > span,
+    &__changePass > a > span {
+        color: #3369F3;
+    }
+    &__goOut > a > span {
+        color: red;
+    }
+}
+
+.text {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.value {
+    float: right;
+    color: #999999;
+    font-size: 13px;
+}
